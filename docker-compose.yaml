@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  snake-game:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./apache2.conf:/usr/local/apache2/conf/apache2.conf
+      - ./000-default.conf:/usr/local/apache2/conf/httpd.conf
