@@ -2,9 +2,7 @@ version: '3.8'
 
 services:
   snake-game:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: victorspinella/snake-game:1.0.0
     ports:
       - "8080:80"
     volumes:
