@@ -4,17 +4,18 @@ services:
   snake-game:
     image: victorspinella/snake-game:1.0.0
     deploy:
-      replicas:8
+      replicas: 8
       placement:
-        contraints: [node.role=worker]
+        constraints: [node.role==worker]
     ports:
       - "8080:80"
+
   visualizer:
     image: dockersamples/visualizer:stable
     ports:
-      -"8888:8080"
+      - "8888:8080"
     volumes:
-      -"/var/run/docker.sock:/var/run/docker.sock"
+      - "/var/run/docker.sock:/var/run/docker.sock"
     deploy:
       placement:
-        constraints: [ node.role == manager ]
+        constraints: [node.role==manager]
